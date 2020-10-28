@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head profile="http://www.w3.org/2005/10/profile">
+  <title>Fitbit API JavaScript</title>
+  <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+  <meta charset="utf-8">
+</head>
+
+<body>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="c3.min.js"></script>
+<link href="c3.css" rel="stylesheet">
+  <a href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=22BC9V&redirect_uri=http%3A%2F%2Flocalhost%3A8080&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800">
+    Login to Fitbit
+  </a>
+  <div>
+    <input type="text" id="day" placeholder="년-월-일">
+    <button id="input_date">날짜변경</button>
+    <input type="text" id="start_time" placeholder="시:분">
+    <input type="text" id="end_time" placeholder="시:분">
+    <button id="input_time">시간변경</button>
+  </div>
+
+
+
+<script src="app.js"></script>
+<h3>활동</h3>
+<div id="activities"></div>
+<h3>심박수</h3>
+<div id="chart"></div>
+<h3>걸음수</h3>
+<div id="chart1"></div>
+<h3>수면</h3>
+<div id="sleeps"></div>
+</body>
+
+</html>
