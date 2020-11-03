@@ -1,0 +1,52 @@
+* {
+  font-family: '나눔고딕',NanumGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+
+body {
+  background: #92d5ee;
+  color: #000;
+}
+
+.body {
+  position: absolute;
+  top: calc(30%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 345px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 300px;
+}
+
+.signin {
+  display: block;
+  margin: 0 auto;
+  margin-top: 4px;
+  width: 300px;
+  height: 45px;
+  background: #00bdcb;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.signout {
+  display: block;
+  margin: 0 auto;
+  margin-top: 4px;
+  width: 300px;
+  height: 45px;
+  background: #cb0000;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}

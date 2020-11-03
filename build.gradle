@@ -19,10 +19,12 @@ repositories {
 }
 
 dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-mustache')
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'junit:junit:4.12'
 	runtimeOnly 'mysql:mysql-connector-java'
 	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.mariadb.jdbc:mariadb-java-client'
 	compileOnly 'org.projectlombok:lombok:1.18.12'
 	//compile 'org.slf4j:slf4j-api:1.7.5'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
