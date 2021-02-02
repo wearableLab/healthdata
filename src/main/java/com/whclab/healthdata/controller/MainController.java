@@ -1,16 +1,38 @@
 package com.whclab.healthdata.controller;
 
-import com.whclab.healthdata.dto.Miband;
-import com.whclab.healthdata.service.MibandService;
+import com.whclab.healthdata.domain.entity.FitbitUser;
+import com.whclab.healthdata.domain.entity.Heartrate;
+import com.whclab.healthdata.domain.repository.StepRepository;
+import com.whclab.healthdata.dto.*;
+import com.whclab.healthdata.service.*;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 public class MainController {
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private ActivityService activityService;
+
+    @Autowired
+    private SleepService sleepService;
+
+    @Autowired
+    private HeartrateService heartrateService;
+
+    @Autowired
+    private FitbitUserService fitbitUserService;
+    @Autowired
+    private StepService stepService;
 
     @Autowired
     MibandService mibandService;
@@ -20,18 +42,29 @@ public class MainController {
         return mibandService.getMibandAll();
     }
 
-//    @RequestMapping("/")
-//    public String main(){
-//        return "index.html";
-//    }
+    @PostMapping("/user/posts")
+    public Long save(@RequestBody UsersDto usersDto) {
+        return userService.savePost(usersDto);
+    }
 
-//    @RequestMapping("/get")
-//    Miband getdata(int id) throws Exception{
-//        return mibandService.getMibandById(1);
-//    }
+    @PostMapping("/activity/posts")
+    public Long save(@RequestBody ActivityDto activityDto) {
+        return activityService.saveActivity(activityDto);
+    }
 
-//    @RequestMapping("/save")
-//    public Miband getdata(int id){
-//        return mibandService.getMibandById(id);
-//    }
+    @PostMapping("/sleeps/posts")
+    public Long save(@RequestBody SleepDto sleepDto) {
+        return sleepService.saveSleep(sleepDto);
+    }
+
+    @PostMapping("/heartrate/posts")
+    public Long save(@RequestBody HeartrateDto heartrateDto) {
+        return heartrateService.saveHeartrate(heartrateDto);
+    }
+
+    @PostMapping("/step/posts")
+    public Long save(@RequestBody StepDto stepDto) {
+        return stepService.saveStep(stepDto);
+    }
+
 }

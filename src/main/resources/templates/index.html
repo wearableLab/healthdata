@@ -4,34 +4,86 @@
 <head profile="http://www.w3.org/2005/10/profile">
   <title>Fitbit API</title>
   <link rel="icon" type="image/png" href="http://example.com/myicon.png">
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
+<style>
+  .parent {
+    display: flex;
+  }
+  .child {
+    flex: 1;
+  }
+  * {
+    font-family: '나눔고딕',NanumGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+  }
+  .signin {
+    display: block;
+    margin: 0 auto;
+    margin-top: 4px;
+    width: 300px;
+    height: 45px;
+    background: #00bdcb;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+</style>
 
 <body>
+
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="c3.min.js"></script>
-<link href="c3.css" rel="stylesheet">
+<link href="/css/c3.css" rel="stylesheet">
 <!--<a href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=22BC9V&redirect_uri=http%3A%2F%2Flocalhost%3A8080&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800">-->
 <!--  Login to Fitbit-->
 <!--</a>-->
 <!--<a href="https://accounts.fitbit.com/login?targetUrl=https%3A%2F%2Fwww.fitbit.com%2Flogin%2Ftransferpage%3Fredirect%3Dhttps%25253A%25252F%25252Fwww.fitbit.com%25252Fuser%25252F7VZYWN&lcl=ko_KR">-->
 <!--  Logout to Fitbit-->
 <!--</a>-->
-<div>
+<script src="/js/app.js"></script>
+</br>
+<div style="margin:20px;">
   <input type="text" id="day" placeholder="년-월-일">
   <button id="input_date">날짜변경</button>
   <input type="text" id="start_time" placeholder="시:분">
   <input type="text" id="end_time" placeholder="시:분">
   <button id="input_time">시간변경</button>
 </div>
-<script src="app.js"></script>
-<h3>사용</h3>
-<div id="users"></div>
-<h3>활동</h3>
-<div id="activities"></div>
-<h3>심박수</h3>
-<div id="heartrate">정보</div>
+
+<div style="margin:10px;">
+  <h3>계정이름</h3>
+  <h4 id="user_code"></h4>
+</div>
+<div class="parent" style="width:100%; height: 260px;">
+  <div class="child" style="border: 3px solid #2E9AFE; padding:10px; margin: 20px;" >
+    <h3>사용자정보</h3>
+    <h4 id="users"></h4>
+    <button type="button" class="signin" id="btn-user-save">Save User</button>
+  </div>
+  <div class="child" style="border: 3px solid #FA5858; padding:10px; margin: 20px;">
+    <h3>활동요약</h3>
+    <h4 id="activities"></h4>
+  </div>
+  <div class="child" style="border: 3px solid #81F781; padding:10px; margin: 20px;">
+    <h3>심박수</h3>
+    <h4 id="heartrate">정보</h4>
+
+  </div>
+  <div class="child" style="border: 3px solid gold; padding:10px; margin: 20px;">
+    <h3>수면정보</h3>
+    <h4 id="sleeps"></h4>
+  </div>
+</div>
+
+<div style="margin:20px;">
+<div class="text-center small mt-2" id="checkMsg" style="color: red"></div>
+<div id="chart"></div>
+<div id="chart1"></div>
+<button type="button" class="signin" id="btn-save">Save Data</button>
+
 <!--<table border="1">-->
 <!--  <thead>-->
 <!--  <tr>-->
@@ -49,11 +101,8 @@
 <!--  </tbody>-->
 <!--</table>-->
 
-<h3>걸음수</h3>
-<div id="chart1"></div>
-<h3>수면</h3>
-<div id="sleeps"></div>
 
+</div>
 </body>
 
 </html>

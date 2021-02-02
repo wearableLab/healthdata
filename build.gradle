@@ -20,8 +20,12 @@ repositories {
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-mustache')
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation('org.hibernate:hibernate-envers')
+	compile group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '1.0.0'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'junit:junit:4.12'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'mysql:mysql-connector-java'
 	compile 'org.springframework.boot:spring-boot-starter-web'
 	compile 'org.mariadb.jdbc:mariadb-java-client'

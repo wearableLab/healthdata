@@ -12,6 +12,5 @@
 
     <insert id="saveMibandData">
         insert into test.miband (miband_id,name,heartrate,step,sleep) values (#{mibandid},#{name},#{heartrate},#{step},#{sleep})
-
     </insert>
 </mapper>

@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://aict-whclab-webservice.crmhqaveoc6d.ap-northeast-2.rds.amazonaws.com/test?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://aict-whclab-webservice.crmhqaveoc6d.ap-northeast-2.rds.amazonaws.com/lifelog_fb?serverTimezone=UTC&useUnicode=yes&characterEncoding=utf8
     username: aict
     password: dnpdjfjqmf!
 
@@ -12,7 +12,6 @@ spring:
     hibernate:
       format_sql: true
       ddl-auto: validate
-
   logging:
     level:
       org:

@@ -1,6 +1,7 @@
 package com.whclab.healthdata.service;
 
 import com.whclab.healthdata.dto.Miband;
+import com.whclab.healthdata.dto.UsersDto;
 import com.whclab.healthdata.mapper.DataMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,4 +27,5 @@ public class MibandService {
     public void addMiband(Miband miband){
         dataMapper.saveMibandData(miband);
     }
+
 }
